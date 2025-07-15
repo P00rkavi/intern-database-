@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Delete Intern Data</h1>
+<br>
+<p>Are you sure you want to delete the following intern?</p>
+<ul>
+    <li><b>Name:</b> {{ intern[1] }}</li>
+    <li><b>Email:</b> {{ intern[6] }}</li>
+    <li><b>Institution: </b> {{ intern[4] }}</li>
+    <li><b>Gender: </b>{{ intern[3] }}</li>
+    <li><b>Phone Number: </b>{{ intern[2] }}</li>
+    <li><b>Years of Experience: </b> {{ intern[5] }}</li>
+</ul>
+<br>
+<form method="POST" style="display: flex; justify-content: space-between; align-items: left; gap:10px">
+    <div style="display: inline-block;">
+    <button type="submit" style="padding: 10px 20px; background-color: rgba(223, 8, 8, 0.782); color: white; border: none; cursor: pointer; align-self: flex-start;">
+        Delete
+    </button>
+    <a href="{{ url_for('view_database') }}" style="text-decoration: none;">
+        <button type="button" style="padding: 10px 20px; background-color: rgb(93, 93, 93); color: white; border: none; cursor: pointer;">
+            Cancel
+        </button>
+    </a>
+    </div>
+</form>
+{% endblock %}
